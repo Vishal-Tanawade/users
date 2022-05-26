@@ -5,14 +5,21 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact'
 import Navbar from './components/Layout/Navbar';
+import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
+
 function App() {
   return (
+    <Router>
     <div className="App">
-    <Navbar/> 
-    <Home/>
-    <About/>
-    <Contact/>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/about" component={About}/>
+        <Route exact path="/Contact" component={Contact}/>
+      </Switch>
+    
     </div>
+  </Router>
   );
 }
 
